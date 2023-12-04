@@ -4,9 +4,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 
-<fx:root alignment="CENTER" spacing="20.0" type="javafx.scene.layout.HBox" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" >
+<fx:root alignment="CENTER" spacing="20.0" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <TextField fx:id="textField" alignment="CENTER" />
-      <Button fx:id="btnControl" mnemonicParsing="false" onAction="#doSomething" text="Click Me" />
+      <Button fx:id="btnControl" mnemonicParsing="false" text="Grabar" />
    </children>
 </fx:root>

@@ -3,6 +3,6 @@ module es.ieslosmoncecillos.componenetes_plazaraul {
     requires javafx.fxml;
 
 
-    opens es.ieslosmoncecillos.componenetes_plazaraul to javafx.fxml;
-    exports es.ieslosmoncecillos.componenetes_plazaraul;
+    opens es.ieslosmontecillos.componentes_plazaraul to javafx.fxml;
+    exports es.ieslosmontecillos.componentes_plazaraul;
 }
