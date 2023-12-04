@@ -1,21 +1,18 @@
 package es.ieslosmontecillos.componentes_plazaraul;
 
-import javafx.application.Application;
-import javafx.event.ActionEvent;
+
+
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
-
 import java.io.IOException;
-
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class CampoTextoNumerico extends TextField {
+
+    final static Label label = new Label();
 
     public CampoTextoNumerico() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CampoTextoNumerico.fxml"));
@@ -29,4 +26,22 @@ public class CampoTextoNumerico extends TextField {
         }
 
     }
+
+    final TextField sum = new TextField() {
+        @Override
+        public void replaceText(int start, int end, String text) {
+            if (!text.matches("[a-z, A-Z]")) {
+                super.replaceText(start, end, text);
+            }
+            label.setText("Enter a numeric value");
+        }
+        @Override
+        public void replaceSelection(String text) {
+            if (!text.matches("[a-z, A-Z]")) {
+                super.replaceSelection(text);
+            }
+        }
+    };
+
 }
+
