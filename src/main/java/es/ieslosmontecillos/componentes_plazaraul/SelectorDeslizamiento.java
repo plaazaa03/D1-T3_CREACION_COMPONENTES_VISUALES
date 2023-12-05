@@ -1,4 +1,4 @@
-package es.ieslosmontecillos.appusoselector;
+package es.ieslosmontecillos.componentes_plazaraul;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,8 +18,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static com.sun.glass.ui.Screen.setEventHandler;
-import static com.sun.javafx.event.EventUtil.fireEvent;
 
 public class SelectorDeslizamiento extends AnchorPane {
     @FXML

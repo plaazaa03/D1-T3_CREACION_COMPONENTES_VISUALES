@@ -2,17 +2,17 @@ package es.ieslosmontecillos.componentes_plazaraul;
 
 
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+
 
 public class CampoTextoNumerico extends TextField {
-
-    final static Label label = new Label();
+    @FXML
+    private TextField textField;
 
     public CampoTextoNumerico() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CampoTextoNumerico.fxml"));
@@ -24,24 +24,23 @@ public class CampoTextoNumerico extends TextField {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-
+        this.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                onActionProperty().get().handle(event);
+            }
+        });
     }
-
-    final TextField sum = new TextField() {
-        @Override
-        public void replaceText(int start, int end, String text) {
-            if (!text.matches("[a-z, A-Z]")) {
-                super.replaceText(start, end, text);
-            }
-            label.setText("Enter a numeric value");
+    @Override
+    public void replaceText(int start, int end, String text) {
+        if (!text.matches("[a-zA-Z]")) {
+            super.replaceText(start, end, text);
         }
-        @Override
-        public void replaceSelection(String text) {
-            if (!text.matches("[a-z, A-Z]")) {
-                super.replaceSelection(text);
-            }
+    }
+    @Override
+    public void replaceSelection(String text) {
+        if (!text.matches("[a-zA-Z]")) {
+            super.replaceSelection(text);
         }
-    };
-
+    }
 }
-

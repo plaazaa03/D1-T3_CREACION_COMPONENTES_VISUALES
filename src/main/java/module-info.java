@@ -1,4 +1,4 @@
-module es.ieslosmoncecillos.componenetes_plazaraul {
+module es.ieslosmontecillos.componentes_plazaraul {
     requires javafx.controls;
     requires javafx.fxml;
 
